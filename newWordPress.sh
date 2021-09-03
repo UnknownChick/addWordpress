@@ -15,8 +15,8 @@ echo "<VirtualHost *:80>
                 Order allow,deny
                 allow from all
         </Directory>
-</VirtualHost>" > /home/alexandre/test.fr.conf
-sudo mv /home/alexandre/test.fr.conf /etc/apache2/sites-available/test.fr.conf
+</VirtualHost>" > /home/alexandre/${name}.conf
+sudo mv /home/alexandre/${name}.conf /etc/apache2/sites-available/${name}.conf
 ligne=$(sed -n '/# The following lines are desirable for IPv6 capable hosts/=' /etc/hosts)
 let ligne--
 sudo sed -i "${ligne}i\127.0.0.1\t${name}" /etc/hosts
